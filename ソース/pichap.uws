@@ -1,0 +1,32 @@
+while true
+	now = GetTime()
+	today = G_TIME_YY + G_TIME_MM2 + G_TIME_DD2
+	time1 = "06:00:00"
+	time2 = "23:59:59"
+	t1 = GetTime(0, today + time1)
+	t2 = GetTime(0, today + time2)
+	now = GetTime()
+	nn = G_TIME_NN
+	ss = G_TIME_SS
+	if t1 <= now and now <= t2 then
+		if nn = 0 and ss = 0 then
+			id=GETID("PiCheck - Running","FNWND3")
+			ctrlwin( id , ACTIVATE)
+			SAVEIMG("test1",id,,,,,,70)
+			id=GETID("Pi Node")
+			ctrlwin( id , ACTIVATE)
+			SAVEIMG("test2",id,,,,,,70)
+			DOSCMD("D:\uwcs\ソース\sendimg.bat")
+			DOSCMD("D:\uwcs\ソース\sendimg2.bat")
+			sleep(1)
+		endif
+	endif
+	sleep(0.2)
+wend
+
+		
+		
+		
+		
+	
+	
