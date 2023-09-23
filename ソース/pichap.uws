@@ -16,8 +16,8 @@ while true
 			id=GETID("Pi Node")
 			ctrlwin( id , ACTIVATE)
 			SAVEIMG("test2",id,,,,,,70)
-			DOSCMD("D:\uwcs\ソース\sendimg.bat")
-			DOSCMD("D:\uwcs\ソース\sendimg2.bat")
+			DOSCMD("sendimg.bat")
+			DOSCMD("sendimg2.bat")
 			sleep(1)
 		endif
 	endif
